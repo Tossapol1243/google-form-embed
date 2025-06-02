@@ -42,15 +42,35 @@
 
   <h2>Submit Form</h2>
 
-  
-    <form action="https://script.google.com/macros/s/AKfycbxbcMNTYq1mQMt6m7wEpcSBLcbN16ZJDTAOXN3JGocuI4FqOAux_Ko73W9FwzbLJBA/exec" method="post" onsubmit="alert('Submitted!');">
-
+  <form id="submitForm">
     <input type="text" name="Applicant" placeholder="Applicant" required>
     <input type="text" name="SUPNAME" placeholder="SUPNAME" required>
     <input type="text" name="JO" placeholder="JO" required>
     <button type="submit">Submit</button>
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
   </form>
+
+  <script>
+    document.getElementById("submitForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbxbcMNTYq1mQMt6m7wEpcSBLcbN16ZJDTAOXN3JGocuI4FqOAux_Ko73W9FwzbLJBA/exec", {
+        method: "POST",
+        body: data,
+      })
+      .then(response => response.text())
+      .then(result => {
+        alert("Submitted!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error submitting form.");
+        console.error("Error!", error.message);
+      });
+    });
+  </script>
 
 </body>
 </html>
