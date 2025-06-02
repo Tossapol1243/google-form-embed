@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+      background: #f9f9f9;
+    }
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Submit Form</h2>
+
+  <form action="https://script.google.com/macros/s/AKfycbxIk9qKlAWmcXfjnxyOSFD_YeojKZH9mRKkKIuwXOkx8AEdmHtRcOmzne62lkZ73MtH8w/exec" method="post" target="hidden_iframe" onsubmit="this.reset(); alert('Submitted!');">
+    <input type="text" name="Applicant" placeholder="Applicant" required>
+    <input type="text" name="SUPNAME" placeholder="SUP Name" required>
+    <input type="text" name="JO" placeholder="JO" required>
+    <button type="submit">Submit</button>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </form>
+
+</body>
+</html>
