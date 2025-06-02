@@ -44,7 +44,19 @@
 
   <form id="submitForm">
     <input type="text" name="Applicant" placeholder="Applicant" required>
-    <input type="text" name="SUPNAME" placeholder="SUPNAME" required>
+    <select name="Applicant" required>
+    <option value="" disabled selected>Select Applicant</option>
+    <option value="Tum">Tum</option>
+    <option value="Somchart">Somchart</option>
+    <option value="Panithan">Panithan</option>
+  </select>
+  <select name="SUPNAME" required>
+    <option value="" disabled selected>Select SUPNAME</option>
+    <option value="SUP1">SUP1</option>
+    <option value="SUP2">SUP2</option>
+    <option value="SUP3">SUP3</option>
+  </select>
+    
     <input type="text" name="JO" placeholder="JO" required>
     <button type="submit">Submit</button>
   </form>
